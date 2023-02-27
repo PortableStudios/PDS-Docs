@@ -1,4 +1,1 @@
-body {
-  background: beige;
-  color: tomato;
-}
+@import url("pds-styles.css");

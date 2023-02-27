@@ -1,5 +1,5 @@
 {
-  "name": "e11ty-starter",
+  "name": "pds-docs",
   "version": "0.1.0",
   "description": "",
   "type": "module",
@@ -12,10 +12,10 @@
     "build:benchmark": "ELEVENTY_ENV=production DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
   },
   "keywords": [
+    "design system",
+    "documentation",
     "11ty",
-    "eleventy",
-    "eleventy-sample",
-    "blog"
+    "eleventy"
   ],
   "repository": {
     "type": "git",
@@ -36,7 +36,6 @@
   "homepage": "https://github.com/ellyloel/e11ty-starter#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",
-    "@11ty/eleventy-activity-feed": "^1.0.9",
     "@11ty/eleventy-img": "^3.0.0",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^1.2.0",

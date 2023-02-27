@@ -63,14 +63,6 @@ module.exports = function (eleventyConfig) {
     require("./src/_11ty/shortcodes/figure.cjs")
   );
 
-  // Collections
-  const types = ["article", "bookmark"];
-  for (const type of types) {
-    eleventyConfig.addCollection(type, (collectionApi) =>
-      collectionApi.getAll().filter((item) => item.data.type === type)
-    );
-  }
-
   // Passthrough copy
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 

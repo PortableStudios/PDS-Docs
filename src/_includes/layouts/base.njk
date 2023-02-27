@@ -48,20 +48,30 @@
 
       <nav>
         <h2 class="visually-hidden">Top level navigation menu</h2>
-        <ul>
-          {%- for entry in collections.all | eleventyNavigation %}
-            <li>
-              <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
-            </li>
-          {%- endfor %}
-        </ul>
-      </nav>
-    </header>
+        {% set navPages = collections.all | eleventyNavigation %}
+        {% macro renderNavListItem(entry) -%}
+          <li>
+            <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+            {%- if entry.children.length -%}
+            <ul>
+              {%- for child in entry.children %}{{ renderNavListItem(child) }}
+              {% endfor -%}
+            </ul>
+          {%- endif -%}
+        </li>
+      {%- endmacro %}
 
-    <main id="main">
-      {{ content | safe }}
-    </main>
+      <ul>
+        {%- for entry in navPages %}{{ renderNavListItem(entry) }}
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </header>
 
-    <footer></footer>
-  </body>
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer></footer>
+</body>
 </html>

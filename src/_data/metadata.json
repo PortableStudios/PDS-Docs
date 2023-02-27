@@ -1,21 +1,19 @@
 {
-  "title": "Title of the website",
-  "short_name": "Short name of the website",
-  "description": "Description of the website.",
-  "url": "https://example.com",
-  "domain": "example.com",
+  "title": "Portable Design System Documentation",
+  "short_name": "PDS Docs",
+  "description": "Portable Design System Documentation website.",
+  "url": "https://pds-docs.netlify.app",
+  "domain": "pds-docs.netlify.app",
   "language": "en",
   "locale": "en_au",
   "author": {
-    "name": "Author Name",
-    "email": "you@example.com",
-    "url": "https://example.com/about/",
+    "name": "Portable",
+    "email": "info@portable.com.au",
+    "url": "https://pds-docs.netlify.app/about/",
     "links": {
-      "Mastodon": "https://mastodon.example/@example",
-      "LinkedIn": "https://linkedin.com/in/example",
-      "CodePen": "https://codepen.io/example",
-      "GitHub": "https://github.com/example",
-      "Twitter": "https://twitter.com/example"
+      "LinkedIn": "https://www.linkedin.com/company/portable/",
+      "GitHub": "https://github.com/PortableStudios",
+      "Twitter": "https://twitter.com/Portable"
     }
   }
 }
