@@ -19,7 +19,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     preAttributes: { tabindex: 0 },
   });
-  eleventyConfig.addPlugin(pluginUnfurl);
+  eleventyConfig.addPlugin(pluginUnfurl, {
+    template: ({ title, url, image }) =>
+      `<a href="${url}" class="[ unfurl ][ popout ]">
+        ${
+          image
+            ? `<img
+                src="${image.url}"
+                width="${image.width}"
+                height="${image.height}"
+                alt=""
+              >`
+            : ``
+        }
+        <span>${title}</span>
+      </a>`,
+  });
   eleventyConfig.addPlugin(pluginVite);
   eleventyConfig.addPlugin(pluginWebC, {
     components: "src/_includes/components/**/*.webc",
