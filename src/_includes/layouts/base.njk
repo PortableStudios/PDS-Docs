@@ -27,6 +27,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ tempTitle }}</title>
+    <link rel="stylesheet" href="/node_modules/@pds/styles/dist/resets.css">
+    <link rel="stylesheet" href="/node_modules/@pds/styles/dist/styles.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <script src="/assets/js/index.js"></script>
     <script defer>
@@ -52,26 +54,26 @@
         {% macro renderNavListItem(entry) -%}
           <li>
             <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
-            {%- if entry.children.length -%}
+          {%- if entry.children.length -%}
             <ul>
               {%- for child in entry.children %}{{ renderNavListItem(child) }}
               {% endfor -%}
             </ul>
           {%- endif -%}
-        </li>
-      {%- endmacro %}
+          </li>
+        {%- endmacro %}
 
-      <ul>
-        {%- for entry in navPages %}{{ renderNavListItem(entry) }}
-        {%- endfor -%}
-      </ul>
-    </nav>
-  </header>
+        <ul>
+          {%- for entry in navPages %}{{ renderNavListItem(entry) }}
+          {%- endfor -%}
+        </ul>
+      </nav>
+    </header>
 
-  <main id="main">
-    {{ content | safe }}
-  </main>
+    <main id="main">
+      {{ content | safe }}
+    </main>
 
-  <footer></footer>
-</body>
+    <footer></footer>
+  </body>
 </html>

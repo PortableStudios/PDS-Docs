@@ -42,6 +42,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "@11ty/eleventy-plugin-vite": "^4.0.0",
     "@11ty/eleventy-plugin-webc": "^0.8.1",
+    "@pds/styles": "github:PortableStudios/PDS-Styles",
     "eleventy-plugin-gen-favicons": "^1.1.2",
     "eleventy-plugin-unfurl": "^1.0.0",
     "luxon": "^3.2.1",
