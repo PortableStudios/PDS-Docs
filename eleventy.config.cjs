@@ -4,6 +4,7 @@ const { EleventyHtmlBasePlugin: pluginHtmlBase } = require("@11ty/eleventy");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginUnfurl = require("eleventy-plugin-unfurl");
 const pluginVite = require("@11ty/eleventy-plugin-vite");
 const pluginWebC = require("@11ty/eleventy-plugin-webc");
 
@@ -18,6 +19,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     preAttributes: { tabindex: 0 },
   });
+  eleventyConfig.addPlugin(pluginUnfurl);
   eleventyConfig.addPlugin(pluginVite);
   eleventyConfig.addPlugin(pluginWebC, {
     components: "src/_includes/components/**/*.webc",
