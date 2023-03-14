@@ -22,7 +22,7 @@ devDependencies:
   '@11ty/eleventy-plugin-syntaxhighlight': 4.2.0
   '@11ty/eleventy-plugin-vite': 4.0.0
   '@11ty/eleventy-plugin-webc': 0.8.1
-  '@pds/styles': github.com/PortableStudios/PDS-Styles/64c5c6710d53c8bfb231a82469059c1dbc64b8e2
+  '@pds/styles': github.com/PortableStudios/PDS-Styles/fcd9489fda9bb9c9a9d86e02ebb141db4e45b96b
   eleventy-plugin-gen-favicons: 1.1.2
   eleventy-plugin-unfurl: 1.0.0
   luxon: 3.2.1
@@ -3274,8 +3274,8 @@ packages:
       yargs-parser: 21.1.1
     dev: true
 
-  github.com/PortableStudios/PDS-Styles/64c5c6710d53c8bfb231a82469059c1dbc64b8e2:
-    resolution: {tarball: https://codeload.github.com/PortableStudios/PDS-Styles/tar.gz/64c5c6710d53c8bfb231a82469059c1dbc64b8e2}
+  github.com/PortableStudios/PDS-Styles/fcd9489fda9bb9c9a9d86e02ebb141db4e45b96b:
+    resolution: {tarball: https://codeload.github.com/PortableStudios/PDS-Styles/tar.gz/fcd9489fda9bb9c9a9d86e02ebb141db4e45b96b}
     name: '@pds/styles'
     version: 0.0.1
     dev: true
