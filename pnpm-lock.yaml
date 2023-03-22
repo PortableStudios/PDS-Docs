@@ -8,10 +8,22 @@ specifiers:
   '@11ty/eleventy-plugin-syntaxhighlight': ^4.2.0
   '@11ty/eleventy-plugin-vite': ^4.0.0
   '@11ty/eleventy-plugin-webc': ^0.8.1
-  '@pds/styles': github:PortableStudios/PDS-Styles
+  '@pds/styles': github:PortableStudios/PDS-Styles#d4a0eed7fefb49e64c34855964bc556a7ab993f7
+  '@sindresorhus/slugify': ^1.1.2
+  '@types/markdown-it': '*'
   eleventy-plugin-gen-favicons: ^1.1.2
   eleventy-plugin-unfurl: ^1.0.0
   luxon: ^3.2.1
+  markdown-it: '*'
+  markdown-it-abbr: ^1.0.4
+  markdown-it-anchor: ^8.6.7
+  markdown-it-container: ^3.0.0
+  markdown-it-deflist: ^2.1.0
+  markdown-it-emoji: ^2.0.2
+  markdown-it-footnote: ^3.0.3
+  markdown-it-ins-del: ^0.1.1
+  markdown-it-mark: ^3.0.1
+  markdown-it-sup: ^1.0.0
   rimraf: ^4.1.2
 
 devDependencies:
@@ -22,10 +34,22 @@ devDependencies:
   '@11ty/eleventy-plugin-syntaxhighlight': 4.2.0
   '@11ty/eleventy-plugin-vite': 4.0.0
   '@11ty/eleventy-plugin-webc': 0.8.1
-  '@pds/styles': github.com/PortableStudios/PDS-Styles/fcd9489fda9bb9c9a9d86e02ebb141db4e45b96b
+  '@pds/styles': github.com/PortableStudios/PDS-Styles/d4a0eed7fefb49e64c34855964bc556a7ab993f7
+  '@sindresorhus/slugify': 1.1.2
+  '@types/markdown-it': 12.2.3
   eleventy-plugin-gen-favicons: 1.1.2
   eleventy-plugin-unfurl: 1.0.0
   luxon: 3.2.1
+  markdown-it: 13.0.1
+  markdown-it-abbr: 1.0.4
+  markdown-it-anchor: 8.6.7_ea7kj7wzjkld5jo2noyjqxi764
+  markdown-it-container: 3.0.0
+  markdown-it-deflist: 2.1.0
+  markdown-it-emoji: 2.0.2
+  markdown-it-footnote: 3.0.3
+  markdown-it-ins-del: 0.1.1
+  markdown-it-mark: 3.0.1
+  markdown-it-sup: 1.0.0
   rimraf: 4.1.2
 
 packages:
@@ -528,6 +552,21 @@ packages:
     resolution: {integrity: sha512-RG8AStHlUiV5ysZQKq97copd2UmVYw3/pRMLefISZ3S1hK104Cwm7iLQ3fTKx+lsUH2CE8FlLaYeEA2LSeqYUA==}
     dependencies:
       '@types/node': 17.0.45
+    dev: true
+
+  /@types/linkify-it/3.0.2:
+    resolution: {integrity: sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==}
+    dev: true
+
+  /@types/markdown-it/12.2.3:
+    resolution: {integrity: sha512-GKMHFfv3458yYy+v/N8gjufHO6MSZKCOXpZc5GXIWWy8uldwfmPn98vp81gZ5f9SVw8YYBctgfJ22a2d7AOMeQ==}
+    dependencies:
+      '@types/linkify-it': 3.0.2
+      '@types/mdurl': 1.0.2
+    dev: true
+
+  /@types/mdurl/1.0.2:
+    resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
     dev: true
 
   /@types/minimatch/3.0.5:
@@ -1989,6 +2028,48 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
+  /markdown-it-abbr/1.0.4:
+    resolution: {integrity: sha512-ZeA4Z4SaBbYysZap5iZcxKmlPL6bYA8grqhzJIHB1ikn7njnzaP8uwbtuXc4YXD5LicI4/2Xmc0VwmSiFV04gg==}
+    dev: true
+
+  /markdown-it-anchor/8.6.7_ea7kj7wzjkld5jo2noyjqxi764:
+    resolution: {integrity: sha512-FlCHFwNnutLgVTflOYHPW2pPcl2AACqVzExlkGQNsi4CJgqOHN7YTgDd4LuhgN1BFO3TS0vLAruV1Td6dwWPJA==}
+    peerDependencies:
+      '@types/markdown-it': '*'
+      markdown-it: '*'
+    dependencies:
+      '@types/markdown-it': 12.2.3
+      markdown-it: 13.0.1
+    dev: true
+
+  /markdown-it-container/3.0.0:
+    resolution: {integrity: sha512-y6oKTq4BB9OQuY/KLfk/O3ysFhB3IMYoIWhGJEidXt1NQFocFK2sA2t0NYZAMyMShAGL6x5OPIbrmXPIqaN9rw==}
+    dev: true
+
+  /markdown-it-deflist/2.1.0:
+    resolution: {integrity: sha512-3OuqoRUlSxJiuQYu0cWTLHNhhq2xtoSFqsZK8plANg91+RJQU1ziQ6lA2LzmFAEes18uPBsHZpcX6We5l76Nzg==}
+    dev: true
+
+  /markdown-it-emoji/2.0.2:
+    resolution: {integrity: sha512-zLftSaNrKuYl0kR5zm4gxXjHaOI3FAOEaloKmRA5hijmJZvSjmxcokOLlzycb/HXlUFWzXqpIEoyEMCE4i9MvQ==}
+    dev: true
+
+  /markdown-it-footnote/3.0.3:
+    resolution: {integrity: sha512-YZMSuCGVZAjzKMn+xqIco9d1cLGxbELHZ9do/TSYVzraooV8ypsppKNmUJ0fVH5ljkCInQAtFpm8Rb3eXSrt5w==}
+    dev: true
+
+  /markdown-it-ins-del/0.1.1:
+    resolution: {integrity: sha512-JP/mNEArhmwJjfpOxRpRhWRkLP4P8zVo7RQRtVKA3lJP5bSkpQma1R/aePemrHxZcADE4J4ZS3RNRPDHLpc9XQ==}
+    dev: true
+
+  /markdown-it-mark/3.0.1:
+    resolution: {integrity: sha512-HyxjAu6BRsdt6Xcv6TKVQnkz/E70TdGXEFHRYBGLncRE9lBFwDNLVtFojKxjJWgJ+5XxUwLaHXy+2sGBbDn+4A==}
+    dev: true
+
+  /markdown-it-sup/1.0.0:
+    resolution: {integrity: sha512-E32m0nV9iyhRR7CrhnzL5msqic7rL1juWre6TQNxsnApg7Uf+F97JOKxUijg5YwXz86lZ0mqfOnutoryyNdntQ==}
+    dev: true
+
   /markdown-it/12.3.2:
     resolution: {integrity: sha512-TchMembfxfNVpHkbtriWltGWc+m3xszaRD0CZup7GFFhzIgQqxIfn3eGj1yZpfuflzPvfkt611B2Q/Bsk1YnGg==}
     hasBin: true
@@ -3274,8 +3355,8 @@ packages:
       yargs-parser: 21.1.1
     dev: true
 
-  github.com/PortableStudios/PDS-Styles/fcd9489fda9bb9c9a9d86e02ebb141db4e45b96b:
-    resolution: {tarball: https://codeload.github.com/PortableStudios/PDS-Styles/tar.gz/fcd9489fda9bb9c9a9d86e02ebb141db4e45b96b}
+  github.com/PortableStudios/PDS-Styles/d4a0eed7fefb49e64c34855964bc556a7ab993f7:
+    resolution: {tarball: https://codeload.github.com/PortableStudios/PDS-Styles/tar.gz/d4a0eed7fefb49e64c34855964bc556a7ab993f7}
     name: '@pds/styles'
     version: 0.0.1
     dev: true

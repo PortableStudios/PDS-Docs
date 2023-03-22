@@ -44,6 +44,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(require("./src/_11ty/plugins/drafts.cjs"));
   eleventyConfig.addPlugin(require("./src/_11ty/plugins/image.cjs"));
   eleventyConfig.addPlugin(require("./src/_11ty/plugins/wikilinks.cjs"));
+  eleventyConfig.addPlugin(require("./src/_11ty/plugins/markdown.cjs").plugin);
 
   // Filters
   eleventyConfig.addFilter("limit", require("./src/_11ty/filters/limit.cjs"));
