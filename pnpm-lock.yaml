@@ -17,6 +17,7 @@ specifiers:
   markdown-it: '*'
   markdown-it-abbr: ^1.0.4
   markdown-it-anchor: ^8.6.7
+  markdown-it-attrs: ^4.1.6
   markdown-it-container: ^3.0.0
   markdown-it-deflist: ^2.1.0
   markdown-it-emoji: ^2.0.2
@@ -43,6 +44,7 @@ devDependencies:
   markdown-it: 13.0.1
   markdown-it-abbr: 1.0.4
   markdown-it-anchor: 8.6.7_ea7kj7wzjkld5jo2noyjqxi764
+  markdown-it-attrs: 4.1.6_markdown-it@13.0.1
   markdown-it-container: 3.0.0
   markdown-it-deflist: 2.1.0
   markdown-it-emoji: 2.0.2
@@ -2039,6 +2041,15 @@ packages:
       markdown-it: '*'
     dependencies:
       '@types/markdown-it': 12.2.3
+      markdown-it: 13.0.1
+    dev: true
+
+  /markdown-it-attrs/4.1.6_markdown-it@13.0.1:
+    resolution: {integrity: sha512-O7PDKZlN8RFMyDX13JnctQompwrrILuz2y43pW2GagcwpIIElkAdfeek+erHfxUOlXWPsjFeWmZ8ch1xtRLWpA==}
+    engines: {node: '>=6'}
+    peerDependencies:
+      markdown-it: '>= 9.0.0'
+    dependencies:
       markdown-it: 13.0.1
     dev: true
 

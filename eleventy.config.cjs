@@ -80,6 +80,10 @@ module.exports = function (eleventyConfig) {
     "figure",
     require("./src/_11ty/shortcodes/figure.cjs")
   );
+  eleventyConfig.addPairedShortcode(
+    "markdown",
+    require("./src/_11ty/shortcodes/markdown.cjs")
+  );
 
   // Passthrough copy
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });

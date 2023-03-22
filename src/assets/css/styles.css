@@ -1,3 +1,6 @@
+@import url("./prism-a11y-light.css");
+@import url("./prism-a11y-dark.css");
+
 .unfurl {
   border-radius: 0.5rem;
   background-color: hsl(0deg 0% 95%);
