@@ -24,3 +24,7 @@
 .unfurl + .unfurl {
   margin-block-start: 2rem;
 }
+
+.cp_embed_iframe[height="1000"] {
+  --ratio: 1 / 2;
+}
