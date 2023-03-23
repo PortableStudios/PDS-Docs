@@ -14,26 +14,46 @@ eleventyNavigation:
 #### Root
 
 ```css
+@keyframes smoothscroll1 {
+  from,
+  to {
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes smoothscroll2 {
+  from,
+  to {
+    scroll-behavior: smooth;
+  }
+}
+
 html {
+  animation: smoothscroll1 1s;
   block-size: 100%;
   font-size: max(1em, 20px);
   text-size-adjust: none;
 
   /* scrollbar-gutter: stable both-edges; */
 
-  @media (prefers-reduced-motion: no-preference) {
-    scroll-behavior: smooth;
+  &:focus-within {
+    @media (prefers-reduced-motion: no-preference) {
+      animation-name: smoothscroll2;
+      scroll-behavior: smooth;
+    }
   }
 }
 ```
 
-Viewport height
+If the user is okay with motion smooth scrolling it set.
 
-Larger root font size
+The animations [disable smooth scrolling when searching the page](https://schepp.dev/posts/smooth-scrolling-and-page-search/). This ensures that user's are able to hop around the search results on the page without being slowed down by scrolling animations.
 
-Removed `scrollbar-gutter` until [this Chromium bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1318404#c2) is fixed
+It’s useful for the `<html>` element to fill the viewport, even when empty.
 
-Smooth scrolling for users that don't prefer reduced motion
+Larger more accessible root font size, if the user's default font size is less than `20px` then the root font size will be `20px` but if the user's font size is bigger than that then the root font size will match their font size value.
+
+Removed `scrollbar-gutter` until [this Chromium bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1318404#c2) is fixed. When fixed we'll be able to wave goodbye to layout shift when opening modals.
 
 ```css
 body {
@@ -45,7 +65,7 @@ body {
 }
 ```
 
-System colours
+We're using system colours, see the colours section on the [[tokens|tokens page]] for more details.
 
 System fonts
 
