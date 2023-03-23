@@ -76,11 +76,15 @@ Hide `hidden` elements
 }
 ```
 
+Clearer focus styles
+
 ```css
 [aria-pressed="true"] {
   border: medium solid;
 }
 ```
+
+Not 100% sold on this one, but I do like the idea of indicating `aria-pressed` by default.
 
 ```css
 :is(
@@ -95,6 +99,8 @@ Hide `hidden` elements
 }
 ```
 
+Pointer cursor on elements that are interactive.
+
 ```css
 ::-moz-range-thumb {
   cursor: grab;
@@ -104,11 +110,6 @@ Hide `hidden` elements
   }
 }
 
-/*
- * Had to duplicate the above code because we can't use `:is()`/`:where()` for a forgiving selector as they don't support pseudo elements
- * https://developer.mozilla.org/en-US/docs/Web/CSS/:is#forgiving_selector_parsing
- * https://developer.mozilla.org/en-US/docs/Web/CSS/:is#is_does_not_select_pseudo-elements
- */
 ::-webkit-slider-thumb {
   cursor: grab;
 
@@ -118,22 +119,29 @@ Hide `hidden` elements
 }
 ```
 
+Graby hand cursor for the range input.
+
+Had to duplicate the above code because we can't use `:is()`/`:where()` for a [forgiving selector](https://developer.mozilla.org/en-US/docs/Web/CSS/:is#forgiving_selector_parsing) as they [don't support pseudo elements](https://developer.mozilla.org/en-US/docs/Web/CSS/:is#is_does_not_select_pseudo-elements).
+
 ```css
 :is(
-    input[disabled] ~ label[for],
-    label[for]:has(~ input[disabled]),
+    input[disabled] + label[for],
+    label[for]:has(+ input[disabled]),
     label:has(input[disabled]),
     [disabled]
   ) {
   cursor: not-allowed;
-}
-```
-
-```css
-[disabled] {
   color: var(--GrayText, GrayText);
 }
 ```
+
+Not allowed cursor and disabled text color for disabled elements and labels of disabled inputs.
+
+The input + label setups that the selector matches:
+
+- `<input disabled><label for></label>`{.language-html}
+- `<label for></label><input disabled>`{.language-html}
+- `<label><input disabled></label>`{.language-html}
 
 #### Type
 
@@ -151,6 +159,10 @@ li {
 }
 ```
 
+Break really long words to avoid overflow.
+
+Not yet well supported, so this is a progressive enhancement to avoid orphans and widows.
+
 ```css
 a {
   color: var(--LinkText, LinkText);
@@ -166,12 +178,18 @@ a {
 }
 ```
 
+Link colours
+
+Removing [Webkit's tap highlight](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/AdjustingtheTextSize/AdjustingtheTextSize.html#//apple_ref/doc/uid/TP40006510-SW5)
+
 ```css
 mark {
   background-color: var(--Mark, Mark);
   color: var(--MarkText, MarkText);
 }
 ```
+
+Mark colours
 
 #### Blocks
 
@@ -182,6 +200,8 @@ mark {
 }
 ```
 
+Removing all margin and padding
+
 ```css
 table {
   border-collapse: collapse;
@@ -189,12 +209,16 @@ table {
 }
 ```
 
+Responsive tables
+
 ```css
 th,
 td {
   border: thin solid var(--CanvasText, CanvasText);
 }
 ```
+
+Table cell borders
 
 ```css
 pre {
@@ -208,11 +232,15 @@ pre code {
 }
 ```
 
+Preformatted text blocks scroll and don't break text, also set a sensible tab size.
+
 ```css
 p:empty {
   display: none;
 }
 ```
+
+Hide empty paragraphs
 
 #### Forms
 
@@ -224,6 +252,8 @@ button {
   font: inherit;
 }
 ```
+
+Button colours and font fix.
 
 ```css
 textarea {
@@ -237,11 +267,17 @@ textarea {
 }
 ```
 
+Font fix
+Width
+Resizing and min height with progressive enhancements
+
 ```css
 fieldset {
   border: 0;
 }
 ```
+
+Remove the fieldset border
 
 ```css
 input:not([type="checkbox"], [type="radio"]),
@@ -251,6 +287,9 @@ select {
   width: 100%;
 }
 ```
+
+Font fix
+Width
 
 ```css
 input:is([type="tel"], [type="text"]),
@@ -262,6 +301,8 @@ select {
 }
 ```
 
+Field colours
+
 ```css
 button,
 input:not([type="checkbox"], [type="radio"], [type="file"], [type="range"]),
@@ -271,13 +312,16 @@ textarea {
 }
 ```
 
+Solid borders
+
 ```css
-/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#putting_it_all_together */
 input[type="range"][orient="vertical"] {
   appearance: slider-vertical;
   writing-mode: bt-lr;
 }
 ```
+
+[Vertical range controls](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#putting_it_all_together)
 
 ```css
 input:is([type="checkbox"], [type="radio"], [type="range"]),
@@ -286,13 +330,9 @@ progress {
 }
 ```
 
+Accent colour
+
 ```css
-/*
- * Sets the label text for any of the following situations:
- * 1. `<label for></label><input id>`
- * 2. `<input id><label for></label>`
- * 3. `<label><input></label>`
- */
 input:is([type="checkbox"], [type="radio"], [type="range"])[id] ~ label[for],
 label:has(input:is([type="checkbox"], [type="radio"], [type="range"])),
 label[for]:has(
@@ -302,18 +342,21 @@ label[for]:has(
 }
 ```
 
+Sets the label text colour for any of the following situations:
+
+- `<label for></label><input id>`{.language-html}
+- `<input id><label for></label>`{.language-html}
+- `<label><input></label>`{.language-html}
+
 ```css
 ::placeholder {
   color: var(--GrayText, GrayText);
 }
 ```
 
+Placeholder text is the same colour as disabled text.
+
 ```css
-/*
- * This rule contains a lot of duplicate code from certain above rules because we can't use `:is()`/`:where()` for a forgiving selector as they don't support pseudo elements
- * https://developer.mozilla.org/en-US/docs/Web/CSS/:is#forgiving_selector_parsing
- * https://developer.mozilla.org/en-US/docs/Web/CSS/:is#is_does_not_select_pseudo-elements
- */
 ::file-selector-button {
   background-color: var(--ButtonFace, ButtonFace);
   border-color: var(--ButtonBorder, ButtonBorder);
@@ -325,6 +368,8 @@ label[for]:has(
   width: 100%;
 }
 ```
+
+This rule contains a lot of duplicate code from certain above rules because we can't use `:is()`/`:where()` for a [forgiving selector](https://developer.mozilla.org/en-US/docs/Web/CSS/:is#forgiving_selector_parsing) as they [don't support pseudo elements](https://developer.mozilla.org/en-US/docs/Web/CSS/:is#is_does_not_select_pseudo-elements).
 
 #### Media
 
@@ -340,12 +385,18 @@ picture {
 }
 ```
 
+aspect ratio variable
+auto height
+maximum width
+
 ```css
 video,
 iframe {
   --ratio: 16 / 9;
 }
 ```
+
+set the aspect ratio variable for certain elements
 
 ```css
 svg {
@@ -355,11 +406,16 @@ svg {
 }
 ```
 
+`currentcolor` for fill and stroke
+remove stroke width on the svg element
+
 ```css
 [data-icon] {
   display: inline-block;
 }
 ```
+
+Helper attribute for making an `img` or `svg` behave more icon like.
 
 ### Example
 
