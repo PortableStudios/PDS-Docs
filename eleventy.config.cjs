@@ -1,6 +1,7 @@
 // External
 const pluginFavicons = require("eleventy-plugin-gen-favicons");
 const { EleventyHtmlBasePlugin: pluginHtmlBase } = require("@11ty/eleventy");
+const pluginInterlinker = require("@photogabble/eleventy-plugin-interlinker");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -14,6 +15,7 @@ module.exports = function (eleventyConfig) {
   // External plugins
   eleventyConfig.addPlugin(pluginFavicons, { generateManifest: false });
   eleventyConfig.addPlugin(pluginHtmlBase);
+  eleventyConfig.addPlugin(pluginInterlinker);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
@@ -43,7 +45,6 @@ module.exports = function (eleventyConfig) {
   // Internal plugins
   eleventyConfig.addPlugin(require("./src/_11ty/plugins/drafts.cjs"));
   eleventyConfig.addPlugin(require("./src/_11ty/plugins/image.cjs"));
-  eleventyConfig.addPlugin(require("./src/_11ty/plugins/wikilinks.cjs"));
   eleventyConfig.addPlugin(require("./src/_11ty/plugins/markdown.cjs").plugin);
 
   // Filters

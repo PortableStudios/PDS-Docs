@@ -9,6 +9,7 @@ specifiers:
   '@11ty/eleventy-plugin-vite': ^4.0.0
   '@11ty/eleventy-plugin-webc': ^0.8.1
   '@pds/styles': github:PortableStudios/PDS-Styles#d4a0eed7fefb49e64c34855964bc556a7ab993f7
+  '@photogabble/eleventy-plugin-interlinker': ^1.0.0
   '@sindresorhus/slugify': ^1.1.2
   '@types/markdown-it': '*'
   eleventy-plugin-gen-favicons: ^1.1.2
@@ -36,6 +37,7 @@ devDependencies:
   '@11ty/eleventy-plugin-vite': 4.0.0
   '@11ty/eleventy-plugin-webc': 0.8.1
   '@pds/styles': github.com/PortableStudios/PDS-Styles/d4a0eed7fefb49e64c34855964bc556a7ab993f7
+  '@photogabble/eleventy-plugin-interlinker': 1.0.0_@11ty+eleventy@2.0.0
   '@sindresorhus/slugify': 1.1.2
   '@types/markdown-it': 12.2.3
   eleventy-plugin-gen-favicons: 1.1.2
@@ -524,6 +526,20 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
+    dev: true
+
+  /@photogabble/eleventy-plugin-interlinker/1.0.0_@11ty+eleventy@2.0.0:
+    resolution: {integrity: sha512-w6iTmWf9tNggp6gKcYA5FltpnHj5kHbWkItNhM98C5qrkWlNHF6zNKL4H4y1rqxd3hX2MEYPzsxCb/RpbsaZHw==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      '@11ty/eleventy': '>=2.0.0-beta.1'
+    peerDependenciesMeta:
+      '@11ty/eleventy':
+        optional: true
+    dependencies:
+      '@11ty/eleventy': 2.0.0
+      chalk: 4.1.2
+      markdown-it: 13.0.1
     dev: true
 
   /@sindresorhus/slugify/1.1.2:

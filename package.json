@@ -43,6 +43,7 @@
     "@11ty/eleventy-plugin-vite": "^4.0.0",
     "@11ty/eleventy-plugin-webc": "^0.8.1",
     "@pds/styles": "github:PortableStudios/PDS-Styles#d4a0eed7fefb49e64c34855964bc556a7ab993f7",
+    "@photogabble/eleventy-plugin-interlinker": "^1.0.0",
     "@sindresorhus/slugify": "^1.1.2",
     "@types/markdown-it": "*",
     "eleventy-plugin-gen-favicons": "^1.1.2",
