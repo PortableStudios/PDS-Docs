@@ -7,11 +7,13 @@ eleventyNavigation:
   order: 3
 ---
 
+## Explanation
+
+### External stylesheets
+
 {% unfurl "https://github.com/jensimmons/cssremedy" %}
 
-### Explanation
-
-#### Root
+### Root
 
 ```css
 @keyframes smoothscroll1 {
@@ -88,7 +90,7 @@ Selection colours
 
 Hide `hidden` elements
 
-#### A11y
+### A11y
 
 ```css
 :focus-visible {
@@ -163,7 +165,7 @@ The input + label setups that the selector matches:
 - `<label for></label><input disabled>`{.language-html}
 - `<label><input disabled></label>`{.language-html}
 
-#### Type
+### Type
 
 ```css
 h1,
@@ -211,7 +213,7 @@ mark {
 
 Mark colours
 
-#### Blocks
+### Blocks
 
 ```css
 * {
@@ -262,7 +264,7 @@ p:empty {
 
 Hide empty paragraphs
 
-#### Forms
+### Forms
 
 ```css
 button {
@@ -391,7 +393,7 @@ Placeholder text is the same colour as disabled text.
 
 This rule contains a lot of duplicate code from certain above rules because we can't use `:is()`/`:where()` for a [forgiving selector](https://developer.mozilla.org/en-US/docs/Web/CSS/:is#forgiving_selector_parsing) as they [don't support pseudo elements](https://developer.mozilla.org/en-US/docs/Web/CSS/:is#is_does_not_select_pseudo-elements).
 
-#### Media
+### Media
 
 ```css
 img,
@@ -437,7 +439,7 @@ remove stroke width on the svg element
 
 Helper attribute for making an `img` or `svg` behave more icon like.
 
-### Example
+## Example
 
 <p class="codepen" data-height="1000" data-default-tab="result" data-slug-hash="rNZqQZK" data-user="ellyloel" style="height: 1000px; display: flex; align-items: center; justify-content: center; border: 2px solid; margin-block: 1em; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/ellyloel/pen/rNZqQZK">

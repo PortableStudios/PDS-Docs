@@ -5,30 +5,10 @@ eleventyNavigation:
   key: "Styles"
 ---
 
-## Overview
-
-![[overview]]
-
-## Tokens
-
-![[tokens]]
-
-## Resets
-
-![[resets]]
-
-## Defaults
-
-![[defaults]]
-
-## Themes
-
-![[themes]]
-
-## Layouts
-
-![[layouts]]
-
-## Utilities
-
-![[utilities]]
+[[overview]]
+[[tokens]]
+[[resets]]
+[[defaults]]
+[[themes]]
+[[layouts]]
+[[utilities]]
