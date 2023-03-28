@@ -6,7 +6,7 @@
  * @returns {string}
  */
 module.exports = (content, caption, className) => {
-  const classMarkup = className ? ` class="${className}"` : "";
-  const captionMarkup = caption ? `<figcaption>${caption}</figcaption>` : "";
-  return `<figure${classMarkup}>${content}${captionMarkup}</figure>`;
+	const classMarkup = className ? ` class="${className}"` : "";
+	const captionMarkup = caption ? `<figcaption>${caption}</figcaption>` : "";
+	return `<figure${classMarkup}>${content}${captionMarkup}</figure>`;
 };

@@ -17,33 +17,33 @@ eleventyNavigation:
 
 ```css
 @keyframes smoothscroll1 {
-  from,
-  to {
-    scroll-behavior: smooth;
-  }
+	from,
+	to {
+		scroll-behavior: smooth;
+	}
 }
 
 @keyframes smoothscroll2 {
-  from,
-  to {
-    scroll-behavior: smooth;
-  }
+	from,
+	to {
+		scroll-behavior: smooth;
+	}
 }
 
 html {
-  animation: smoothscroll1 1s;
-  block-size: 100%;
-  font-size: max(1em, 20px);
-  text-size-adjust: none;
+	animation: smoothscroll1 1s;
+	block-size: 100%;
+	font-size: max(1em, 20px);
+	text-size-adjust: none;
 
-  /* scrollbar-gutter: stable both-edges; */
+	/* scrollbar-gutter: stable both-edges; */
 
-  &:focus-within {
-    @media (prefers-reduced-motion: no-preference) {
-      animation-name: smoothscroll2;
-      scroll-behavior: smooth;
-    }
-  }
+	&:focus-within {
+		@media (prefers-reduced-motion: no-preference) {
+			animation-name: smoothscroll2;
+			scroll-behavior: smooth;
+		}
+	}
 }
 ```
 
@@ -59,11 +59,11 @@ Removed `scrollbar-gutter` until [this Chromium bug](https://bugs.chromium.org/p
 
 ```css
 body {
-  background-color: var(--Canvas, Canvas);
-  color: var(--CanvasText, CanvasText);
-  font-family: system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
-  min-block-size: 100%;
+	background-color: var(--Canvas, Canvas);
+	color: var(--CanvasText, CanvasText);
+	font-family: system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol", "Noto Color Emoji";
+	min-block-size: 100%;
 }
 ```
 
@@ -111,8 +111,8 @@ Viewport height
 
 ```css
 ::selection {
-  background-color: var(--Highlight, Highlight);
-  color: var(--HighlightText, HighlightText);
+	background-color: var(--Highlight, Highlight);
+	color: var(--HighlightText, HighlightText);
 }
 ```
 
@@ -120,7 +120,7 @@ Selection colours
 
 ```css
 [hidden] {
-  display: none !important;
+	display: none !important;
 }
 ```
 
@@ -130,7 +130,7 @@ Hide `hidden` elements
 
 ```css
 :focus-visible {
-  outline: medium solid var(--Highlight, Highlight);
+	outline: medium solid var(--Highlight, Highlight);
 }
 ```
 
@@ -138,7 +138,7 @@ Clearer focus styles
 
 ```css
 [aria-pressed="true"] {
-  border: medium solid;
+	border: medium solid;
 }
 ```
 
@@ -146,14 +146,14 @@ Not 100% sold on this one, but I do like the idea of indicating `aria-pressed` b
 
 ```css
 :is(
-    summary,
-    label[for],
-    label:has(input),
-    select,
-    button,
-    input:is([type="checkbox"], [type="file"], [type="radio"], [type="range"])
-  ) {
-  cursor: pointer;
+		summary,
+		label[for],
+		label:has(input),
+		select,
+		button,
+		input:is([type="checkbox"], [type="file"], [type="radio"], [type="range"])
+	) {
+	cursor: pointer;
 }
 ```
 
@@ -161,19 +161,19 @@ Pointer cursor on elements that are interactive.
 
 ```css
 ::-moz-range-thumb {
-  cursor: grab;
+	cursor: grab;
 
-  &:active {
-    cursor: grabbing;
-  }
+	&:active {
+		cursor: grabbing;
+	}
 }
 
 ::-webkit-slider-thumb {
-  cursor: grab;
+	cursor: grab;
 
-  &:active {
-    cursor: grabbing;
-  }
+	&:active {
+		cursor: grabbing;
+	}
 }
 ```
 
@@ -183,13 +183,13 @@ Had to duplicate the above code because we can't use `:is()`/`:where()` for a [f
 
 ```css
 :is(
-    input[disabled] + label[for],
-    label[for]:has(+ input[disabled]),
-    label:has(input[disabled]),
-    [disabled]
-  ) {
-  cursor: not-allowed;
-  color: var(--GrayText, GrayText);
+		input[disabled] + label[for],
+		label[for]:has(+ input[disabled]),
+		label:has(input[disabled]),
+		[disabled]
+	) {
+	cursor: not-allowed;
+	color: var(--GrayText, GrayText);
 }
 ```
 
@@ -212,8 +212,8 @@ h5,
 h6,
 p,
 li {
-  overflow-wrap: break-word;
-  text-wrap: balance;
+	overflow-wrap: break-word;
+	text-wrap: balance;
 }
 ```
 
@@ -223,16 +223,16 @@ Not yet well supported, so this is a progressive enhancement to avoid orphans an
 
 ```css
 a {
-  color: var(--LinkText, LinkText);
-  -webkit-tap-highlight-color: transparent;
+	color: var(--LinkText, LinkText);
+	-webkit-tap-highlight-color: transparent;
 
-  &:visited {
-    color: var(--VisitedText, VisitedText);
-  }
+	&:visited {
+		color: var(--VisitedText, VisitedText);
+	}
 
-  &:active {
-    color: var(--ActiveText, ActiveText);
-  }
+	&:active {
+		color: var(--ActiveText, ActiveText);
+	}
 }
 ```
 
@@ -242,8 +242,8 @@ Removing [Webkit's tap highlight](https://developer.apple.com/library/archive/do
 
 ```css
 mark {
-  background-color: var(--Mark, Mark);
-  color: var(--MarkText, MarkText);
+	background-color: var(--Mark, Mark);
+	color: var(--MarkText, MarkText);
 }
 ```
 
@@ -253,8 +253,8 @@ Mark colours
 
 ```css
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 ```
 
@@ -262,8 +262,8 @@ Removing all margin and padding
 
 ```css
 table {
-  border-collapse: collapse;
-  width: 100%;
+	border-collapse: collapse;
+	width: 100%;
 }
 ```
 
@@ -272,7 +272,7 @@ Responsive tables
 ```css
 th,
 td {
-  border: thin solid var(--CanvasText, CanvasText);
+	border: thin solid var(--CanvasText, CanvasText);
 }
 ```
 
@@ -280,13 +280,13 @@ Table cell borders
 
 ```css
 pre {
-  overflow: auto;
+	overflow: auto;
 }
 
 pre code {
-  hyphens: none;
-  tab-size: 4;
-  white-space: pre;
+	hyphens: none;
+	tab-size: 4;
+	white-space: pre;
 }
 ```
 
@@ -294,7 +294,7 @@ Preformatted text blocks scroll and don't break text, also set a sensible tab si
 
 ```css
 p:empty {
-  display: none;
+	display: none;
 }
 ```
 
@@ -304,10 +304,10 @@ Hide empty paragraphs
 
 ```css
 button {
-  background-color: var(--ButtonFace, ButtonFace);
-  border-color: var(--ButtonBorder, ButtonBorder);
-  color: var(--ButtonText, ButtonText);
-  font: inherit;
+	background-color: var(--ButtonFace, ButtonFace);
+	border-color: var(--ButtonBorder, ButtonBorder);
+	color: var(--ButtonText, ButtonText);
+	font: inherit;
 }
 ```
 
@@ -315,13 +315,13 @@ Button colours and font fix.
 
 ```css
 textarea {
-  display: block;
-  font: inherit;
-  min-height: 6em;
-  min-height: 6lh; /* Not yet well supported, so keeping in a fallback for now */
-  resize: vertical;
-  resize: block; /* Not yet well supported, so keeping in a fallback for now */
-  width: 100%;
+	display: block;
+	font: inherit;
+	min-height: 6em;
+	min-height: 6lh; /* Not yet well supported, so keeping in a fallback for now */
+	resize: vertical;
+	resize: block; /* Not yet well supported, so keeping in a fallback for now */
+	width: 100%;
 }
 ```
 
@@ -331,7 +331,7 @@ Resizing and min height with progressive enhancements
 
 ```css
 fieldset {
-  border: 0;
+	border: 0;
 }
 ```
 
@@ -340,9 +340,9 @@ Remove the fieldset border
 ```css
 input:not([type="checkbox"], [type="radio"]),
 select {
-  display: block;
-  font: inherit;
-  width: 100%;
+	display: block;
+	font: inherit;
+	width: 100%;
 }
 ```
 
@@ -353,9 +353,9 @@ Width
 input:is([type="tel"], [type="text"]),
 textarea,
 select {
-  background-color: var(--Field, Field);
-  border: thin solid var(--FieldText, FieldText);
-  color: var(--FieldText, FieldText);
+	background-color: var(--Field, Field);
+	border: thin solid var(--FieldText, FieldText);
+	color: var(--FieldText, FieldText);
 }
 ```
 
@@ -366,7 +366,7 @@ button,
 input:not([type="checkbox"], [type="radio"], [type="file"], [type="range"]),
 select,
 textarea {
-  border-style: solid;
+	border-style: solid;
 }
 ```
 
@@ -374,8 +374,8 @@ Solid borders
 
 ```css
 input[type="range"][orient="vertical"] {
-  appearance: slider-vertical;
-  writing-mode: bt-lr;
+	appearance: slider-vertical;
+	writing-mode: bt-lr;
 }
 ```
 
@@ -384,7 +384,7 @@ input[type="range"][orient="vertical"] {
 ```css
 input:is([type="checkbox"], [type="radio"], [type="range"]),
 progress {
-  accent-color: var(--SelectedItem, SelectedItem);
+	accent-color: var(--SelectedItem, SelectedItem);
 }
 ```
 
@@ -394,9 +394,9 @@ Accent colour
 input:is([type="checkbox"], [type="radio"], [type="range"])[id] ~ label[for],
 label:has(input:is([type="checkbox"], [type="radio"], [type="range"])),
 label[for]:has(
-    ~ input:is([type="checkbox"], [type="radio"], [type="range"])[id]
-  ) {
-  color: var(--SelectedItemText, SelectedItemText);
+		~ input:is([type="checkbox"], [type="radio"], [type="range"])[id]
+	) {
+	color: var(--SelectedItemText, SelectedItemText);
 }
 ```
 
@@ -408,7 +408,7 @@ Sets the label text colour for any of the following situations:
 
 ```css
 ::placeholder {
-  color: var(--GrayText, GrayText);
+	color: var(--GrayText, GrayText);
 }
 ```
 
@@ -416,14 +416,14 @@ Placeholder text is the same colour as disabled text.
 
 ```css
 ::file-selector-button {
-  background-color: var(--ButtonFace, ButtonFace);
-  border-color: var(--ButtonBorder, ButtonBorder);
-  border-style: solid;
-  color: var(--ButtonText, ButtonText);
-  cursor: pointer;
-  display: block;
-  font: inherit;
-  width: 100%;
+	background-color: var(--ButtonFace, ButtonFace);
+	border-color: var(--ButtonBorder, ButtonBorder);
+	border-style: solid;
+	color: var(--ButtonText, ButtonText);
+	cursor: pointer;
+	display: block;
+	font: inherit;
+	width: 100%;
 }
 ```
 
@@ -437,9 +437,9 @@ video,
 audio,
 iframe,
 picture {
-  aspect-ratio: auto var(--ratio);
-  height: auto;
-  max-width: 100%;
+	aspect-ratio: auto var(--ratio);
+	height: auto;
+	max-width: 100%;
 }
 ```
 
@@ -450,7 +450,7 @@ maximum width
 ```css
 video,
 iframe {
-  --ratio: 16 / 9;
+	--ratio: 16 / 9;
 }
 ```
 
@@ -458,9 +458,9 @@ set the aspect ratio variable for certain elements
 
 ```css
 svg {
-  fill: var(--fill, var(--svg, currentcolor));
-  stroke: var(--stroke, var(--svg, currentcolor));
-  stroke-width: 0;
+	fill: var(--fill, var(--svg, currentcolor));
+	stroke: var(--stroke, var(--svg, currentcolor));
+	stroke-width: 0;
 }
 ```
 
@@ -469,7 +469,7 @@ remove stroke width on the svg element
 
 ```css
 [data-icon] {
-  display: inline-block;
+	display: inline-block;
 }
 ```
 
