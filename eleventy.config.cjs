@@ -77,7 +77,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("newUrl", require("./src/_11ty/filters/newUrl.cjs"));
 
   // Shortcodes
-  eleventyConfig.addShortcode(
+  eleventyConfig.addPairedShortcode(
     "figure",
     require("./src/_11ty/shortcodes/figure.cjs")
   );

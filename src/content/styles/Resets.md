@@ -61,15 +61,51 @@ Removed `scrollbar-gutter` until [this Chromium bug](https://bugs.chromium.org/p
 body {
   background-color: var(--Canvas, Canvas);
   color: var(--CanvasText, CanvasText);
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   min-block-size: 100%;
 }
 ```
 
 We're using system colours, see the colours section on the [[tokens|tokens page]] for more details.
 
-System fonts
+System font stack
+
+[Modern font stacks](https://modernfontstacks.com/)
+
+::: details Screenshots
+[Color Emoji Font Stack](https://codepen.io/client9/pen/qoJoZW)
+
+{% figure "Android" %}
+{% markdown %}
+![Android](./src/assets/img/Android.jpeg)
+{% endmarkdown %}
+{% endfigure %}
+
+{% figure "iOS" %}
+{% markdown %}
+![iOS](./src/assets/img/iOS.jpeg)
+{% endmarkdown %}
+{% endfigure %}
+
+{% figure "MacOS" %}
+{% markdown %}
+![MacOS](./src/assets/img/MacOS.png)
+{% endmarkdown %}
+{% endfigure %}
+
+{% figure "PopOS" %}
+{% markdown %}
+![PopOS](./src/assets/img/PopOS.png)
+{% endmarkdown %}
+{% endfigure %}
+
+{% figure "Windows" %}
+{% markdown %}
+![Windows](./src/assets/img/Windows.png)
+{% endmarkdown %}
+{% endfigure %}
+:::
 
 Viewport height
 

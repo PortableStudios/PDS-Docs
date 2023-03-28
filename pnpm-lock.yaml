@@ -21,6 +21,7 @@ specifiers:
   markdown-it-attrs: ^4.1.6
   markdown-it-container: ^3.0.0
   markdown-it-deflist: ^2.1.0
+  markdown-it-eleventy-img: ^0.10.0
   markdown-it-emoji: ^2.0.2
   markdown-it-footnote: ^3.0.3
   markdown-it-ins-del: ^0.1.1
@@ -49,6 +50,7 @@ devDependencies:
   markdown-it-attrs: 4.1.6_markdown-it@13.0.1
   markdown-it-container: 3.0.0
   markdown-it-deflist: 2.1.0
+  markdown-it-eleventy-img: 0.10.0_markdown-it@13.0.1
   markdown-it-emoji: 2.0.2
   markdown-it-footnote: 3.0.3
   markdown-it-ins-del: 0.1.1
@@ -2075,6 +2077,19 @@ packages:
 
   /markdown-it-deflist/2.1.0:
     resolution: {integrity: sha512-3OuqoRUlSxJiuQYu0cWTLHNhhq2xtoSFqsZK8plANg91+RJQU1ziQ6lA2LzmFAEes18uPBsHZpcX6We5l76Nzg==}
+    dev: true
+
+  /markdown-it-eleventy-img/0.10.0_markdown-it@13.0.1:
+    resolution: {integrity: sha512-sUyhXQig3RXWfopSV+gRyDGEps212zMxVqemCJWDW2liH5NXjpc2/jZmq+JAj2oNYdf2JhxC5bnQ/uaBAICzoA==}
+    engines: {node: '>=14.15'}
+    peerDependencies:
+      markdown-it: '>= 9.0.0'
+    dependencies:
+      '@11ty/eleventy-img': 3.0.0
+      markdown-it: 13.0.1
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
     dev: true
 
   /markdown-it-emoji/2.0.2:

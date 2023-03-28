@@ -5,6 +5,10 @@
   border-radius: 0.5rem;
   background-color: hsl(0deg 0% 95%);
   padding: 1rem;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: hsl(257, 11%, 17%);
+  }
 }
 
 .unfurl span {
