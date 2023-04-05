@@ -3,6 +3,7 @@ title: "Elements"
 permalink: "/elements/"
 eleventyNavigation:
   key: "Elements"
+  order: 4
 ---
 
 ## Inputs that are bad for a11y

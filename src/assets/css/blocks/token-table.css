@@ -1,0 +1,40 @@
+.token-table-wrapper {
+	border-start-end-radius: 16px;
+	border-start-start-radius: 16px;
+	overflow-x: auto;
+}
+
+.token-table {
+	--th-padding: var(--space-s);
+	--td-padding: var(--space-s);
+
+	min-inline-size: 700px;
+
+	:is(th) {
+		background-color: var(--ButtonFace);
+		border-block: none;
+		font-size: var(--step-0);
+	}
+
+	:is(td) {
+		border-block-color: var(--ButtonBorder);
+		vertical-align: top;
+	}
+
+	:is(th, td) {
+		border-inline: none;
+	}
+
+	.col-token {
+		font-size: var(--step-0);
+	}
+
+	.col-example {
+		> div {
+			block-size: 100px;
+			border: 1px solid;
+			inline-size: 100%;
+			margin-block-end: var(--space-2xs);
+		}
+	}
+}

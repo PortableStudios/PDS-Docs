@@ -1,0 +1,156 @@
+{
+	"colours": [
+		{
+			"token": "Canvas",
+			"desc": "Background of application content or documents.",
+			"value": {
+				"light": "oklch(1 0 0)",
+				"dark": "oklch(0.23 0.01 298.42)"
+			}
+		},
+		{
+			"token": "CanvasText",
+			"desc": "Text in application content or documents.",
+			"value": {
+				"light": "oklch(0 0 0)",
+				"dark": "oklch(0.99 0 287.03)"
+			}
+		},
+		{
+			"token": "LinkText",
+			"desc": "Text in non-active, non-visited links. For light backgrounds, traditionally blue.",
+			"value": {
+				"light": "oklch(0.43 0.3 264.05)",
+				"dark": "oklch(0.69 0.17 281.06)"
+			}
+		},
+		{
+			"token": "VisitedText",
+			"desc": "Text in visited links. For light backgrounds, traditionally purple.",
+			"value": {
+				"light": "oklch(0.37 0.17 301.69)",
+				"dark": "oklch(0.85 0.14 326.74)"
+			}
+		},
+		{
+			"token": "ActiveText",
+			"desc": "Text in active links. For light backgrounds, traditionally red.",
+			"value": {
+				"light": "oklch(0.6 0.25 29.23)",
+				"dark": "oklch(0.7 0.19 23.19)"
+			}
+		},
+		{
+			"token": "ButtonFace",
+			"desc": "The face background color for push buttons.",
+			"value": {
+				"light": "oklch(0.93 0.01 286.66)",
+				"dark": "oklch(0.29 0.01 291.26)"
+			}
+		},
+		{
+			"token": "ButtonText",
+			"desc": "Text on push buttons.",
+			"value": {
+				"light": "oklch(0 0 0)",
+				"dark": "oklch(0.99 0 287.03)"
+			}
+		},
+		{
+			"token": "ButtonBorder",
+			"desc": "The base border color for push buttons.",
+			"value": {
+				"light": "oklch(0.92 0 0)",
+				"dark": "oklch(0.56 0.01 299.22)"
+			}
+		},
+		{
+			"token": "Field",
+			"desc": "Background of input fields.",
+			"value": {
+				"light": "oklch(1 0 0)",
+				"dark": "oklch(0.29 0.01 291.26)"
+			}
+		},
+		{
+			"token": "FieldText",
+			"desc": "Text in input fields.",
+			"value": {
+				"light": "oklch(0.27 0 0)",
+				"dark": "oklch(0.99 0 287.03)"
+			}
+		},
+		{
+			"token": "Highlight",
+			"desc": "Background of selected text, for example from `::selection`.",
+			"value": {
+				"light": "oklch(0.86 0.07 252.64)",
+				"dark": "oklch(0.49 0.08 253.14)"
+			}
+		},
+		{
+			"token": "HighlightText",
+			"desc": "Text of selected text.",
+			"value": {
+				"light": "oklch(0 0 0)",
+				"dark": "oklch(0 0 0)"
+			}
+		},
+		{
+			"token": "SelectedItem",
+			"desc": "Background of selected items, for example a selected checkbox.",
+			"value": {
+				"light": "oklch(0.54 0.2 258.61)",
+				"dark": "oklch(0.82 0.09 251.88)"
+			}
+		},
+		{
+			"token": "SelectedItemText",
+			"desc": "Text of selected items.",
+			"value": {
+				"light": "oklch(0 0 0)",
+				"dark": "oklch(0.99 0 287.03)"
+			}
+		},
+		{
+			"token": "Mark",
+			"desc": "Background of text that has been specially marked (such as by the HTML mark element).",
+			"value": {
+				"light": "oklch(0.97 0.21 109.76)",
+				"dark": "oklch(0.97 0.21 109.76)"
+			}
+		},
+		{
+			"token": "MarkText",
+			"desc": "Text that has been specially marked (such as by the HTML mark element).",
+			"value": {
+				"light": "oklch(0 0 0)",
+				"dark": "oklch(0 0 0)"
+			}
+		},
+		{
+			"token": "GrayText",
+			"desc": "Disabled text. (Often, but not necessarily, gray.)",
+			"value": {
+				"light": "oklch(0.54 0 0)",
+				"dark": "oklch(0.56 0.01 299.22)"
+			}
+		},
+		{
+			"token": "AccentColor",
+			"desc": "Background of accented user interface controls.",
+			"value": {
+				"light": "oklch(0.6 0.22 257.22)",
+				"dark": "oklch(0.6 0.22 257.22)"
+			}
+		},
+		{
+			"token": "AccentColorText",
+			"desc": "Text of accented user interface controls.",
+			"value": {
+				"light": "oklch(0 0 0)",
+				"dark": "oklch(1 0 0)"
+			}
+		}
+	]
+}

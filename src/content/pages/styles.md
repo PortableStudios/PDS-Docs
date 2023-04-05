@@ -3,10 +3,10 @@ title: "Styles"
 permalink: "/styles/"
 eleventyNavigation:
   key: "Styles"
+  order: 2
 ---
 
 [[overview]]
-[[tokens]]
 [[resets]]
 [[defaults]]
 [[themes]]
