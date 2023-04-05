@@ -1,34 +1,20 @@
-@import url("./prism-a11y-light.css");
-@import url("./prism-a11y-dark.css");
+/* Layers */
+@layer tokens, base, blocks, utilities;
 
-.unfurl {
-  border-radius: 0.5rem;
-  background-color: hsl(0deg 0% 95%);
-  padding: 1rem;
+/* Tokens */
 
-  @media (prefers-color-scheme: dark) {
-    background-color: hsl(257, 11%, 17%);
-  }
-}
+/* Base */
+@import url("@portablestudios/pds-styles/dist/styles.css") layer(base);
 
-.unfurl span {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.1;
-  margin-block-start: 0.5em;
-}
+/* Blocks */
+@import url("./blocks/codepen.css") layer(blocks);
+@import url("./blocks/disclosure-nav.css") layer(blocks);
+@import url("./blocks/home-link.css") layer(blocks);
+@import url("./blocks/page-layout.css") layer(blocks);
+@import url("./blocks/prism-a11y-light.css") layer(blocks);
+@import url("./blocks/prism-a11y-dark.css") layer(blocks);
+@import url("./blocks/token-table.css") layer(blocks);
+@import url("./blocks/unfurl.css") layer(blocks);
 
-.unfurl img {
-  border-radius: inherit;
-  height: auto;
-  width: 100%;
-}
-
-.unfurl + .unfurl {
-  margin-block-start: 2rem;
-}
-
-.cp_embed_iframe[height="1000"] {
-  --ratio: 1 / 2;
-}
+/* Utilities */
+@import url("./utilities/layout.css") layer(utilities);

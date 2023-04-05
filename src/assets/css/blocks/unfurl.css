@@ -1,0 +1,27 @@
+.unfurl {
+	background-color: hsl(0deg 0% 95%);
+	border-radius: 0.5rem;
+	padding: 1rem;
+
+	@media (prefers-color-scheme: dark) {
+		background-color: hsl(257deg 11% 17%);
+	}
+}
+
+.unfurl span {
+	display: block;
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 1.1;
+	margin-block-start: 0.5em;
+}
+
+.unfurl img {
+	border-radius: inherit;
+	height: auto;
+	width: 100%;
+}
+
+.unfurl + .unfurl {
+	margin-block-start: 2rem;
+}

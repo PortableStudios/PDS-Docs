@@ -1,0 +1,4 @@
+/* stylelint-disable-next-line selector-class-pattern */
+.cp_embed_iframe[height="1000"] {
+	--ratio: 1 / 2;
+}
