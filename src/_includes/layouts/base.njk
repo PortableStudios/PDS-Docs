@@ -1,78 +1,87 @@
 {%- set tempTitle -%}
 {%- if title -%}
-  {{ title }} | {{ metadata.title }}
+	{{ title }} | {{ metadata.title }}
 {%- else -%}
-  {{ metadata.title }}
+	{{ metadata.title }}
 {%- endif -%}
 {%- endset -%}
 
 <!DOCTYPE html>
 <html lang="{{ metadata.language }}">
-  <head>
-    {#-
-      The Optimum Head Order – https://www.youtube.com/watch?v=UW1PEMBdX5E
+	<head>
+		{#-
+			The Optimum Head Order – https://www.youtube.com/watch?v=UW1PEMBdX5E
 
-      1. <meta charset|http-equiv|viewport />
-      2. <title>
-      3. preconnect
-      4. <script src="" async></script>
-      5. CSS that includes @import
-      6. Synchronous JS
-      7. Synchronous CSS
-      8. preload
-      9. <script src="" defer></script>
-      10. prefetch / prerender
-      11. Everything else ('SEO' meta tags, icons, Open Graph, etc.)
-    -#}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ tempTitle }}</title>
-    <link rel="stylesheet" href="/node_modules/@portablestudios/pds-styles/dist/styles.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <script src="/assets/js/index.js"></script>
-    <script defer>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator
-            .serviceWorker
-            .register('/sw.js')
-        })
-      }
-    </script>
-    {% include "partials/meta.njk" %}
-  </head>
-  <body>
-    <a href="#main" class="visually-hidden">Skip to main content</a>
+			1. <meta charset|http-equiv|viewport />
+			2. <title>
+			3. preconnect
+			4. <script src="" async></script>
+			5. CSS that includes @import
+			6. Synchronous JS
+			7. Synchronous CSS
+			8. preload
+			9. <script src="" defer></script>
+			10. prefetch / prerender
+			11. Everything else ('SEO' meta tags, icons, Open Graph, etc.)
+		-#}
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ tempTitle }}</title>
+		<link rel="stylesheet" href="/assets/css/styles.css">
+		<script type="module" src="/assets/js/index.js" defer></script>
+		<script type="module" defer>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator
+						.serviceWorker
+						.register('/assets/js/sw.js')
+				})
+			}
+		</script>
+		{% include "partials/meta.njk" %}
+	</head>
+	<body class="[ page-layout ][ grid ]" data-theme="dark">
+		<a href="#main" class="[ visually-hidden ]">Skip to main content</a>
 
-    <header>
-      <a href="/" class="home-link">{{ metadata.title }}</a>
+		<header>
+			<a href="/" class="[ home-link ]">{{ metadata.title | replace(" ", "<br>") | safe }}</a>
 
-      <nav>
-        <h2 class="visually-hidden">Top level navigation menu</h2>
-        {% set navPages = collections.all | eleventyNavigation %}
-        {% macro renderNavListItem(entry) -%}
-          <li>
-            <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
-          {%- if entry.children.length -%}
-            <ul>
-              {%- for child in entry.children %}{{ renderNavListItem(child) }}
-              {% endfor -%}
-            </ul>
-          {%- endif -%}
-          </li>
-        {%- endmacro %}
+			<nav aria-label="Main" class="[ disclosure-nav ]">
+				{% set navPages = collections.all | eleventyNavigation %}
+				{% macro renderNavListItem(entry) -%}
+					<li>
+						{%- if entry.children.length -%}
+							<div>
+								<a href="{{ entry.url }}" id="{{ entry.title | slugify }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+								<button type="button" aria-labelledby="{{ entry.title | slugify }}" aria-expanded="false" aria-controls="{{ entry.title | slugify }}-list">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down" data-icon="" aria-hidden="true">
+										<polyline points="6 9 12 15 18 9"></polyline>
+									</svg>
+								</button>
+							</div>
+							<ul id="{{ entry.title | slugify }}-list">
+								{%- for child in entry.children %}
+									{{ renderNavListItem(child) }}
+								{% endfor -%}
+							</ul>
+						{% else %}
+							<a href="{{ entry.url }}" id="{{ entry.title | slugify }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+						{%- endif -%}
+					</li>
+				{%- endmacro %}
 
-        <ul>
-          {%- for entry in navPages %}{{ renderNavListItem(entry) }}
-          {%- endfor -%}
-        </ul>
-      </nav>
-    </header>
+				<ul class="[ disclosure-nav-list ]">
+					{%- for entry in navPages %}
+						{{ renderNavListItem(entry) }}
+					{%- endfor -%}
+				</ul>
+			</nav>
+		</header>
 
-    <main id="main">
-      {{ content | safe }}
-    </main>
+		<main id="main" data-theme="light">
+			{{ content | safe }}
+		</main>
 
-    <footer></footer>
-  </body>
+		<footer></footer>
+	</body>
 </html>
