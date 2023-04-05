@@ -1,0 +1,67 @@
+.page-layout {
+	background-color: var(--Canvas);
+	color: var(--CanvasText);
+	grid-template-areas:
+		"header main"
+		"header footer";
+	grid-template-columns: min-content 1fr;
+	max-inline-size: 100%;
+	min-block-size: 100%;
+
+	> header {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-s);
+		grid-area: header;
+
+		> nav {
+			margin: 0;
+
+			> ul {
+				display: flex;
+				flex-direction: column;
+				padding: 0;
+
+				@media (width <= 1024px) {
+					flex-flow: row wrap;
+				}
+
+				@media (width > 1024px) {
+					> li {
+						flex-wrap: wrap;
+
+						> ul {
+							position: revert;
+							top: revert;
+							z-index: revert;
+						}
+					}
+				}
+			}
+		}
+
+		@media (width <= 1024px) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	> main {
+		background-color: var(--Canvas);
+		border-radius: 16px;
+		color: var(--CanvasText);
+		grid-area: main;
+		padding: var(--space-s, 1em);
+	}
+
+	> footer {
+		grid-area: footer;
+	}
+
+	@media (width <= 1024px) {
+		grid-template:
+			"header" auto
+			"main" 1fr
+			"footer" auto / 1fr;
+	}
+}
