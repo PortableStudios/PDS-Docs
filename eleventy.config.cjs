@@ -1,4 +1,5 @@
 // External imports
+require("dotenv").config();
 
 // Internal imports
 

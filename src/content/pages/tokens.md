@@ -7,5 +7,5 @@ eleventyNavigation:
 ---
 
 [[colour]]
-[[Type]]
-[[Space]]
+[[type]]
+[[space]]

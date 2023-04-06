@@ -1,0 +1,40 @@
+---
+title: Space
+date: 2023-04-05
+tags:
+  -
+eleventyNavigation:
+  order: 3
+---
+
+{% unfurl "https://utopia.fyi/space/calculator?c=320,16,1.414,1240,18,1.618,4,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12" %}
+
+{% tokenTable %}
+{% for step in space.records %}
+	<tr>
+		<td class="[ col-token ]">
+			<code>var(--space-{{ step.fields.Step | lower }})</code>
+		</td>
+		<td class="[ col-desc ]">
+			{% if step.fields.Description %}
+				<p>{{ step.fields.Description | markdown | safe }}</p>
+			{% endif %}
+		</td>
+		<td class="[ col-example ][ flow ]">
+			<div
+				class="space"
+				style="
+					inline-size: var(--space-{{ step.fields.Step | lower }});
+					block-size: var(--space-{{ step.fields.Step | lower }});
+				"
+			></div>
+			<p>
+				@min: <code>{{ step.fields["@min"] }}</code>
+			</p>
+			<p>
+				@max: <code>{{ step.fields["@max"] }}</code>
+			</p>
+		</td>
+	</tr>
+{% endfor %}
+{% endtokenTable %}

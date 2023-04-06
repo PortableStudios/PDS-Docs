@@ -17,4 +17,5 @@
 @import url("./blocks/unfurl.css") layer(blocks);
 
 /* Utilities */
+@import url("./utilities/flow.css") layer(utilities);
 @import url("./utilities/layout.css") layer(utilities);

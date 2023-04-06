@@ -9,35 +9,27 @@ eleventyNavigation:
 
 <a href="https://drafts.csswg.org/css-color/#css-system-colors">System Colors section of the CSS Color spec</a>
 
-<div class="[ token-table-wrapper ][ full ]" tabindex="0">
-	<table class="[ token-table ]">
-		<thead>
-			<tr>
-				<th scope="col" width="30%">Token</th>
-				<th scope="col" width="35%">Description</th>
-				<th scope="col" width="35%">Example</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for colour in colours.colours %}
-				<tr>
-					<td class="[ col-token ]">
-						<code>var(--{{ colour.token }})</code>
-					</td>
-					<td class="[ col-desc ]">
-						<p>{{ colour.desc | markdown | safe }}</p>
-					</td>
-					<td class="[ col-example ]">
-						<div style="background-color: var(--{{ colour.token }})"></div>
-						<p>
-							Light: <code>{{ colour.value.light }}</code>
-						</p>
-						<p>
-							Dark: <code>{{ colour.value.dark }}</code>
-						</p>
-					</td>
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
-</div>
+{% tokenTable %}
+{% for colour in colours.records %}
+	<tr>
+		<td class="[ col-token ]">
+			<code>var(--{{ colour.fields.Name }})</code>
+		</td>
+		<td class="[ col-desc ]">
+			{% if step.fields.Description %}
+				<p>{{ colour.fields.Description | markdown | safe }}</p>
+			{% endif %}
+		</td>
+		<td class="[ col-example ][ flow ]">
+			<div class="colour" data-theme="light" style="background-color: var(--{{ colour.fields.Name }})"></div>
+			<p>
+				Light: <code>{{ colour.fields["Value Light"] }}</code> / <code>{{ colour.fields["Figma Value Light"] }}</code>
+			</p>
+			<div class="colour" data-theme="dark" style="background-color: var(--{{ colour.fields.Name }})"></div>
+			<p>
+				Dark: <code>{{ colour.fields["Value Dark"] }}</code> / <code>{{ colour.fields["Figma Value Dark"] }}</code>
+			</p>
+		</td>
+	</tr>
+{% endfor %}
+{% endtokenTable %}

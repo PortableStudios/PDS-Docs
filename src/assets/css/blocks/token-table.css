@@ -30,11 +30,16 @@
 	}
 
 	.col-example {
-		> div {
+		--flow-space: var(--space-2xs);
+
+		.colour {
 			block-size: 100px;
 			border: 1px solid;
 			inline-size: 100%;
-			margin-block-end: var(--space-2xs);
+		}
+
+		.space {
+			background-color: var(--AccentColor);
 		}
 	}
 }

@@ -39,6 +39,7 @@
 	"homepage": "https://github.com/ellyloel/e11ty-starter#readme",
 	"devDependencies": {
 		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy-fetch": "^4.0.0",
 		"@11ty/eleventy-img": "^3.1.0",
 		"@11ty/eleventy-navigation": "^0.3.5",
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
@@ -51,6 +52,7 @@
 		"@types/markdown-it": "^12.2.3",
 		"browserslist": "^4.21.5",
 		"cssnano": "^6.0.0",
+		"dotenv": "^16.0.3",
 		"eleventy-plugin-gen-favicons": "^1.1.2",
 		"eleventy-plugin-unfurl": "^1.0.0",
 		"eslint": "^8.37.0",
