@@ -16,7 +16,7 @@ eleventyNavigation:
 			<code>var(--{{ colour.fields.Name }})</code>
 		</td>
 		<td class="[ col-desc ]">
-			{% if step.fields.Description %}
+			{% if colour.fields.Description %}
 				<p>{{ colour.fields.Description | markdown | safe }}</p>
 			{% endif %}
 		</td>
