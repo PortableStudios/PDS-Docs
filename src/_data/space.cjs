@@ -1,7 +1,8 @@
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async () => {
-	const url = "https://api.airtable.com/v0/appzlMuqYUIjxOeY1/Space";
+	const url =
+		"https://api.airtable.com/v0/appzlMuqYUIjxOeY1/Space?view=Grid%20view";
 
 	/* This returns a promise */
 	return EleventyFetch(url, {
